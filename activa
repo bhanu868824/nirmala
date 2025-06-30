@@ -1,4 +1,14 @@
-bhanu
-pwd
-drive
-section
+#!/bin/bash
+
+REPO_URL="https://github.com/username/repo.git"
+BRANCH="feature-xyz"
+
+git clone "$REPO_URL"
+cd repo || exit
+
+git checkout -b "$BRANCH"
+
+echo "Some change" > change.txt
+git add .
+git commit -m "Added change.txt"
+git push origin "$BRANCH"
